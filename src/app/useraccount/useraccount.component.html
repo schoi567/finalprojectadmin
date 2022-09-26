@@ -1,0 +1,88 @@
+<div class="bd">
+
+
+
+  <table>
+    <tr>
+      <th scope="col">Select to change setting <br>to block customers from login</th>
+      <th scope="col">id</th>
+      <th scope="col">username</th>
+      <th scope="col">firstname</th>
+      <th scope="col">lastname</th>
+      <th scope="col">email</th>
+      <th scope="col">phonenumber</th>
+      <th scope="col">primaryaccountnumber</th>
+      <th scope="col">savingsaccountnumber</th>
+      <th scope="col">block</th>
+
+    </tr>
+
+    <ng-container *ngFor="let customers of AllCustomers ;let indexOfelement = index; ">
+        <tr>
+          <td ><button (click)="data(customers.username)">{{customers.username}}</button> </td>
+          <td><p>{{customers.id}}</p></td>
+          <td><p>{{customers.username}}</p></td>
+          <td><p>{{customers.firstname}}</p></td>
+          <td><p>{{customers.lastname}}</p></td>
+          <td><p>{{customers.email}}</p></td>
+          <td><p>{{customers.phonenumber}}</p></td>
+          <td><p>{{customers.primaryaccountnumber}}</p></td>
+          <td><p>{{customers.savingsaccountnumber}}</p></td>
+          <td><p>{{customers.block}}  </p></td>
+          </tr>
+    </ng-container>
+  </table>
+<br><br><br>
+  <table>
+    <tr>
+      <th scope="col">Select to change setting to <br> change customers pending request</th>
+      <th scope="col">amount</th>
+
+
+      <th scope="col">date</th>
+      <th scope="col">account</th>
+      <th scope="col">username</th>
+      <th scope="col">approved</th>
+    </tr>
+
+    <ng-container *ngFor="let money of depositwithdrawmoney1">
+        <tr>
+          <td ><button (click)="data1(money.id)">{{money.id}}</button> </td>
+
+          <td><p>${{money.amount}}</p></td>
+          <td><p>{{money.date}}</p></td>
+          <td><p>{{money.account}}</p></td>
+          <td><p>{{money.username}}</p></td>
+          <td><p>{{money.approved}}</p></td>
+          </tr>
+    </ng-container>
+  </table>
+  <br><br><br>
+  <table>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">date</th>
+      <th scope="col">Sender's Account Type</th>
+      <th scope="col">Sender's Username</th>
+      <th scope="col">Receiver's Account Type</th>
+      <th scope="col">Receiver's Username</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Approval Status</th>
+    </tr>
+
+    <ng-container *ngFor="let transfers of alltransfers">
+        <tr>
+          <td> <button (click)="data2(transfers.id)">{{transfers.id}}</button></td>
+          <td><p>{{transfers.date}}</p></td>
+          <td><p>{{transfers.fromaccounttype}}</p></td>
+          <td><p>{{transfers.fromusername}}</p></td>
+          <td><p>{{transfers.toaccounttype}}</p></td>
+          <td><p>{{transfers.receiverusename}}</p></td>
+          <td><p>${{transfers.amount}}</p></td>
+          <td><p>{{transfers.transfer}}</p></td>
+          </tr>
+    </ng-container>
+  </table>
+  <br><br><br>
+</div>
+

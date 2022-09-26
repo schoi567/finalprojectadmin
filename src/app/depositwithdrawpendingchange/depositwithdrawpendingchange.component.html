@@ -1,0 +1,46 @@
+<div class="bd">
+
+
+
+  <table>
+    <tr>
+      <th scope="col">date</th>
+      <th scope="col">amount</th>
+      <th scope="col">account</th>
+      <th scope="col">username</th>
+      <th scope="col">approved</th>
+
+    </tr>
+
+
+
+          <tr>
+            <td><p>{{depositwithdrawmoney.date}}</p></td>
+            <td><p>{{depositwithdrawmoney.amount}}</p></td>
+            <td><p>{{depositwithdrawmoney.account}}</p></td>
+            <td><p>{{depositwithdrawmoney.username}}</p></td>
+            <td><p>{{depositwithdrawmoney.approved}}</p>
+              <form #form="ngForm" novalidate>
+              <select name="account" id="account" [disabled]="depositwithdrawmoney.approved=='yes'" [(ngModel)]="depositwithdrawmoney.approved">
+                <option  name = "pending"  value="pending" >pending
+                <option  name = "yes"  value="yes" >yes
+                <option name = "no" value="no"  >no
+              </select>
+              <input type="submit" (click)="decide()" value="Submit">
+            </form>
+          </td>
+
+
+          </tr>
+
+
+
+
+
+
+
+  </table>
+
+
+
+</div>

@@ -1,0 +1,38 @@
+<div class="bd">
+
+
+
+  <table>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">username</th>
+      <th scope="col">firstname</th>
+      <th scope="col">lastname</th>
+      <th scope="col">block</th>
+
+    </tr>
+
+    <tr>
+      <td><p>{{Customers.id}}</p></td>
+      <td><p>{{Customers.username}}</p></td>
+      <td><p>{{Customers.firstname}}</p></td>
+      <td><p>{{Customers.lastname}}</p></td>
+      <td>
+
+     <form #form="ngForm" novalidate>
+        <select name="account" id="account"  [(ngModel)]="this.Customers.block">
+          <option  name = "yes"  value="yes" >yes
+          <option name = "no" value="no"  >no
+        </select>
+        <input type="submit" (click)="turnin()" value="Submit">
+      </form>  </td>
+
+  </tr>
+
+
+
+  </table>
+
+
+
+</div>

@@ -1,0 +1,48 @@
+<div class="bd">
+
+
+
+  <table>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">date</th>
+      <th scope="col">Sender's Account Type</th>
+      <th scope="col">Sender's Username</th>
+      <th scope="col">Receiver's Account Type</th>
+      <th scope="col">Receiver's Username</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Approval Status</th>
+
+    </tr>
+
+    <tr>
+      <td><p>{{transfer.id}}</p></td>
+      <td><p>{{transfer.date}}</p></td>
+
+      <td><p>{{transfer.fromaccounttype}}</p></td>
+      <td><p>{{transfer.fromusername}}</p></td>
+      <td><p>{{transfer.toaccounttype}}</p></td>
+      <td><p>{{transfer.receiverusename}}</p></td>
+
+      <td><p>${{transfer.amount}}</p></td>
+
+      <td>
+
+     <form #form="ngForm" novalidate>
+        <select name="account" id="account" [disabled]="this.transfer.transfer=='done'" [(ngModel)]="this.transfer.transfer">
+          <option  name = "pending"  value="pending" >pending
+          <option name = "accept" value="accept"  >accept
+          <option name = "reject" value="reject"  >reject
+        </select>
+        <input type="submit" (click)="turnin()" value="Submit">
+      </form>  </td>
+
+  </tr>
+
+
+
+  </table>
+
+
+
+</div>

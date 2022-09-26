@@ -1,0 +1,27 @@
+
+<div class="bd">
+<table>
+  <tr>
+    <th scope="col">userid</th>
+    <th scope="col">username</th>
+    <th scope="col">checkbook accpted?</th>
+    <th scope="col">checkbook account type</th>
+    <th scope="col">date</th>
+    <th scope="col">description</th>
+
+  </tr>
+<ng-container *ngFor="let checkbookreq of checkbookreq ;let indexOfelement = index; ">
+  <tr>
+    <td ><button (click)="data(checkbookreq.username)">{{checkbookreq.username}}</button> </td>
+    <td><p>{{checkbookreq.username}}</p></td>
+    <td><p>{{checkbookreq.accept}}</p></td>
+    <td><p>{{checkbookreq.accounttype}}</p></td>
+    <td><p>{{checkbookreq.date}}</p></td>
+    <td><p>{{checkbookreq.description}}</p></td>
+
+
+
+  </tr>
+</ng-container>
+</table>
+</div>

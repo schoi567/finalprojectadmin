@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="info">
+
+
+  <div class="home"  >
+      <button  class="home" (click)="HomePage()" type="button">ICIN Bank</button><br>
+  </div>
+
+
+
+<div class="useraccount" *ngIf="AdminauthenticationService.isUserLogin()"  >
+    <button class="useraccount" (click)="useraccount()" type="button">User Account</button><br>
+</div>
+
+
+
+<div class="checkbookrequest" *ngIf="AdminauthenticationService.isUserLogin()" >
+  <button class="checkbookrequest" (click)="checkbookrequest()" type="button">CheckBook Request</button><br>
+</div>
+
+
+
+<div class="logout" *ngIf="AdminauthenticationService.isUserLogin()" >
+  <button class="logout" (click)="logout()" type="button">Log Out</button><br>
+</div>
+

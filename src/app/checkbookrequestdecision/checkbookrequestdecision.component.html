@@ -1,0 +1,38 @@
+
+<div class="bd">
+  <table>
+    <tr>
+      <th scope="col">userid</th>
+      <th scope="col">username</th>
+
+      <th scope="col">checkbook account type</th>
+      <th scope="col">date</th>
+      <th scope="col">description</th>
+      <th scope="col">checkbook sent?</th>
+      <th scope="col">send check?</th>
+    </tr>
+    <tr>
+      <td><p>{{singlecheckbookreq.id}}</p></td>
+      <td><p>{{singlecheckbookreq.username}}</p></td>
+      <td><p>{{singlecheckbookreq.accounttype}}</p></td>
+      <td><p>{{singlecheckbookreq.date}}</p></td>
+      <td><p>{{singlecheckbookreq.description}}</p></td>
+      <td><p>{{singlecheckbookreq.accept}}</p></td>
+
+      <td>
+
+     <form #form="ngForm" novalidate>
+        <select name="account" id="account"  [(ngModel)]="singlecheckbookreq.accept">
+          <option  name = "ture"  value="true" >yes
+          <option name = "no" value="false"  >no
+        </select>
+        <input type="submit" (click)="turnin()" value="Submit">
+      </form>  </td>
+
+  </tr>
+
+
+
+
+  </table>
+  </div>
