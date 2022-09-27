@@ -29,57 +29,57 @@ export class AdminauthenticationService {
     let loggedin1 = localStorage.getItem("gothrough");
   return !(loggedin===null && loggedin1===null); }
 
-
   retrieveallcustomers() {
-    return this.http.get<allcustomers[]>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/customers`)
+    return this.http.get<allcustomers[]>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/customers`)
   }
 
   retrieveallaccounts():  Observable<accounts[]>  {
-    return this.http.get<accounts[]>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/customers/accounts`)
+    return this.http.get<accounts[]>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/customers/accounts`)
   }
   retrievecustomer(username: any): Observable<customers> {
-    return this.http.get<customers>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/customers/login/${username}`)
+    return this.http.get<customers>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/customers/login/${username}`)
   }
 
   retrieveallcheckrequest():  Observable<checkbookreq[]>  {
-    return this.http.get<checkbookreq[]>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/checkrequests`)
+    return this.http.get<checkbookreq[]>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/checkrequests`)
   }
 
   retrievesinglecheckrequest(checkbookusername: any):  Observable<singlecheckbookreq>
   {
-    return this.http.get<singlecheckbookreq>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/checkrequests/${checkbookusername}`)
+    return this.http.get<singlecheckbookreq>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/checkrequests/${checkbookusername}`)
   }
 
   updatecustomerblock(username: any, customers: any): Observable<customers> {
-    return this.http.put<customers>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/customersblock/${username}`,customers)
+    return this.http.put<customers>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/customersblock/${username}`,customers)
   }
 
   updateesinglecheckrequest(checkbookusername: any, singlecheckbookreq: singlecheckbookreq):  Observable<singlecheckbookreq> {
-    return this.http.put<singlecheckbookreq>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/checkrequests/${checkbookusername}`, singlecheckbookreq)
+    return this.http.put<singlecheckbookreq>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/checkrequests/${checkbookusername}`, singlecheckbookreq)
   }
 
   retrievealldepositwithdraw(): Observable<depositwithdrawmoney[]> {
-    return this.http.get<depositwithdrawmoney1[]>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/depositwithdrawmoney/all`)
+    return this.http.get<depositwithdrawmoney1[]>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/depositwithdrawmoney/all`)
   }
 
   retrievedepositwithdraw(id: any ): Observable<depositwithdrawmoney> {
-    return this.http.get<depositwithdrawmoney>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/depositwithdrawmoney/all/${id}`)
+    return this.http.get<depositwithdrawmoney>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/depositwithdrawmoney/all/${id}`)
   }
-
 
   updatedepositwithdraw(id: any, depositwithdrawmoney:depositwithdrawmoney ): Observable<depositwithdrawmoney> {
-    return this.http.put<depositwithdrawmoney>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/depositwithdrawmoney/all/${id}`, depositwithdrawmoney)
+    return this.http.put<depositwithdrawmoney>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/depositwithdrawmoney/all/${id}`, depositwithdrawmoney)
   }
   transfer(transfer:transfer): Observable<transfer> {
-    return this.http.post<transfer>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/transfermoney/admin`,transfer)
+    return this.http.post<transfer>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/transfermoney/admin`,transfer)
   }
 
   receivetransfer(): Observable<alltransfers[]> {
-    return this.http.get<alltransfers[]>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/transfermoney` )
+    return this.http.get<alltransfers[]>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/transfermoney` )
   }
 
   receivesingletransfer(id: any): Observable<transfer> {
-    return this.http.get<transfer>(`http://ec2-3-237-7-55.compute-1.amazonaws.com:8080/transfermoney/${id}`)
+    return this.http.get<transfer>(`http://ec2-34-239-172-109.compute-1.amazonaws.com:8080/transfermoney/${id}`)
   }
 
 }
+
+
